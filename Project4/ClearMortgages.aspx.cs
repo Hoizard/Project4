@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,12 @@ namespace Project4
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ClearButton_Click(object sender, EventArgs e)
+        {
+            IIOHelper iOHelper = new FileIOHelper();
+            iOHelper.ClearAllMortgages();
         }
     }
 }

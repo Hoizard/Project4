@@ -3,7 +3,7 @@
 <hr />
 <asp:Menu ID="Menu1" Orientation="Vertical" runat="server">
     <Items>
-        <asp:MenuItem NavigateUrl="~/CalcMortgage.aspx" Text="Calc Mortgages" Value="CalcMortgages"></asp:MenuItem>
+        <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Calc Mortgages" Value="CalcMortgages"></asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/ClearMortgages.aspx" Text="Clear Mortages" Value="ClearMortages"></asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/ListMortgages.aspx" Text="List Mortgages" Value="ListMortgages"></asp:MenuItem>
     </Items>
