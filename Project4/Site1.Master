@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Project4.Site1" %>
 
+<%@ Register Src="~/SiteNavigation.ascx" TagPrefix="uc1" TagName="SiteNavigation" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -11,16 +14,7 @@
 <body>
     <hr />
     <form id="form1" runat="server">
-        <h1>Mortgage Calculator</h1>
-<hr />
-<asp:Menu ID="Menu1" Orientation="Vertical" runat="server">
-    <Items>
-        <asp:MenuItem NavigateUrl="~/CalcMortgage.aspx" Text="Calc Mortgages" Value="CalcMortgages"></asp:MenuItem>
-        <asp:MenuItem NavigateUrl="~/ClearMortgages.aspx" Text="Clear Mortages" Value="ClearMortages"></asp:MenuItem>
-        <asp:MenuItem NavigateUrl="~/ListMortgages.aspx" Text="List Mortgages" Value="ListMortgages"></asp:MenuItem>
-    </Items>
-</asp:Menu>
-    <hr />
+        <uc1:SiteNavigation runat="server" id="SiteNavigation" />
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

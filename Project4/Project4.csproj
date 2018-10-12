@@ -67,11 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClearMortgages.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="SiteNavigation.ascx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClearMortgages.aspx.cs">
+      <DependentUpon>ClearMortgages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClearMortgages.aspx.designer.cs">
+      <DependentUpon>ClearMortgages.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -82,6 +91,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteNavigation.ascx.cs">
+      <DependentUpon>SiteNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteNavigation.ascx.designer.cs">
+      <DependentUpon>SiteNavigation.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
