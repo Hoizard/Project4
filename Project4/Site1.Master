@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Project4.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <hr />
+    <form id="form1" runat="server">
+        <h1>Mortgage Calculator</h1>
+<hr />
+<asp:Menu ID="Menu1" Orientation="Vertical" runat="server">
+    <Items>
+        <asp:MenuItem NavigateUrl="~/CalcMortgage.aspx" Text="Calc Mortgages" Value="CalcMortgages"></asp:MenuItem>
+        <asp:MenuItem NavigateUrl="~/ClearMortgages.aspx" Text="Clear Mortages" Value="ClearMortages"></asp:MenuItem>
+        <asp:MenuItem NavigateUrl="~/ListMortgages.aspx" Text="List Mortgages" Value="ListMortgages"></asp:MenuItem>
+    </Items>
+</asp:Menu>
+    <hr />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
