@@ -86,7 +86,7 @@ namespace Project4
                 ResultPayment.Text = formattedOutput;
 
                 //IIOHelper fileIOHelper = new DatabaseIOHelper();
-                FileIOHelper fileIOHelper = new FileIOHelper();
+                FileIOHelper fileIOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
                 fileIOHelper.AddMortgages(formattedOutput);
             }
         }

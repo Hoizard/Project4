@@ -12,7 +12,7 @@ namespace Project4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            IIOHelper iOHelper = new FileIOHelper();
+            IIOHelper iOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
             var list = iOHelper.ListAllMortgages();
 
             if (list.Count == 0)

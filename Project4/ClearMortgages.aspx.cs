@@ -17,7 +17,7 @@ namespace Project4
 
         protected void ClearButton_Click(object sender, EventArgs e)
         {
-            IIOHelper iOHelper = new FileIOHelper();
+            IIOHelper iOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
             iOHelper.ClearAllMortgages();
         }
     }

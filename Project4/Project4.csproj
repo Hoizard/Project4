@@ -82,11 +82,9 @@
     <Compile Include="ClearMortgages.aspx.designer.cs">
       <DependentUpon>ClearMortgages.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FileIOHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IIOHelper.cs" />
     <Compile Include="ListMortgages.aspx.cs">
       <DependentUpon>ListMortgages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -95,6 +93,7 @@
       <DependentUpon>ListMortgages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerPathHelper.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +129,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MortgageLibrary\MortgageLibrary.csproj">
+      <Project>{af73cc2a-6a0a-40d6-8fc8-cfb9c95b06fa}</Project>
+      <Name>MortgageLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
