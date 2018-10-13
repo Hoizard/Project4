@@ -16,11 +16,6 @@ namespace Project4
             {
                 OtherYears.Enabled = false;
             }
-            else
-            {
-                OtherYears.Enabled = false;
-                OtherYears.Text = string.Empty;
-            }
         }
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
