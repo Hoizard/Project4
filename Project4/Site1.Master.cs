@@ -16,7 +16,7 @@ namespace Project4
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            TimerLabel.Text = DateTime.Now.ToString("dddd, MMMM dd HH:mm:ss");
+            TimerLabel.Text = DateTime.Now.ToString("dddd, MMMM dd yyyy HH:mm:ss tt");
         }
     }
 }

@@ -10,12 +10,17 @@
         <p>
             &nbsp;</p>
         <p>
-            Please enter the loan duration in years<asp:RadioButtonList ID="RadioButtonList1" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" runat="server">
+            Please enter the loan duration in years
+            <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                <ContentTemplate>
+                <asp:RadioButtonList ID="RadioButtonList1" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" runat="server">
                 <asp:ListItem Value="15">15 Years</asp:ListItem>
                 <asp:ListItem Value="30">30 Years</asp:ListItem>
                 <asp:ListItem>Other</asp:ListItem>
             </asp:RadioButtonList>
             <asp:TextBox ID="OtherYears" runat="server"></asp:TextBox>
+                </ContentTemplate>    
+            </asp:UpdatePanel>
         </p>
         <p>
             Please Select the interest rate<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
@@ -34,7 +39,7 @@
                 <asp:ListItem>4.25</asp:ListItem>
                 <asp:ListItem>4.50</asp:ListItem>
             </asp:DropDownList>
-        </p>
+        
         <p>
             <asp:Button ID="ComputeMortgage" runat="server" OnClick="ComputeMortgage_Click" Text="Monthly Payment" />
         </p>
