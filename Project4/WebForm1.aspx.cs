@@ -10,6 +10,19 @@ namespace Project4
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                OtherYears.Enabled = false;
+            }
+            else
+            {
+                OtherYears.Enabled = false;
+                OtherYears.Text = string.Empty;
+            }
+        }
+
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RadioButtonList1.SelectedValue.ToLower() == "Other".ToLower())
