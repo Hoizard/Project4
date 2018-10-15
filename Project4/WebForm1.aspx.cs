@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Project4
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class CalcMortgage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +18,7 @@ namespace Project4
             }
         }
 
-        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        private void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RadioButtonList1.SelectedValue.ToLower() == "Other".ToLower())
             {
@@ -31,7 +31,7 @@ namespace Project4
             }
         }
 
-        protected double ComputeMonthlyPayment(double principal, double years, double rate)
+        public static double ComputeMonthlyPayment(double principal, double years, double rate)
         {
             double monthly = 0;
             double top = principal * rate / 1200.00;
@@ -40,7 +40,7 @@ namespace Project4
             return monthly;
         }
 
-        protected void ComputeMortgage_Click(object sender, EventArgs e)
+        public void ComputeMortgage_Click(object sender, EventArgs e)
         {
             string inPrin = PrincipleAmount.Text;
             string inYears = OtherYears.Text;

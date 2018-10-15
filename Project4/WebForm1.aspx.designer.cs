@@ -10,7 +10,7 @@
 namespace Project4 {
     
     
-    public partial class WebForm1 {
+    public partial class CalcMortgage {
         
         /// <summary>
         /// PrincipleAmount control.
