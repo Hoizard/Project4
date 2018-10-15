@@ -45,7 +45,18 @@ namespace CalculatorTests
             //Act
             double f = (double)mort;
             //Assert
-            Assert.AreNotEqual(6.21, mort);
+            Assert.AreNotEqual(6.10, mort);
+
+        }
+        [TestMethod]
+        public void TestThousandYearOtherExact()
+        {
+            //Arrange
+            double mort = CalcMortgage.ComputeMonthlyPayment(1000, 15, 1.25);
+            //Act
+            mort = Math.Round(mort,2);
+            //Assert
+            Assert.AreEqual(6.10, mort);
 
         }
     }
