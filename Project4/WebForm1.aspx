@@ -12,7 +12,7 @@
             Please enter the loan duration in years
             <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
                 <ContentTemplate>
-                <asp:RadioButtonList ID="RadioButtonList1" AutoPostBack="true" runat="server">
+                <asp:RadioButtonList ID="RadioButtonList1" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" runat="server">
                 <asp:ListItem Value="15">15 Years</asp:ListItem>
                 <asp:ListItem Value="30">30 Years</asp:ListItem>
                 <asp:ListItem>Other</asp:ListItem>
