@@ -2,6 +2,8 @@
 using Project3;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -84,12 +86,19 @@ namespace Project4
             {
                 double monthly = ComputeMonthlyPayment(principal, years, rate);
                 string formattedOutput = string.Format("The monthly payment is {0:C}", monthly);
+                string formattedPrinciple = principal.ToString();
+                string formattedYears = years.ToString();
+                string formattedRate = rate.ToString();
                 ResultPayment.Text = formattedOutput;
+                PrincipleAmount.Text = formattedPrinciple;
+                OtherYears.Text = formattedYears;
+                DropDownList1.SelectedItem.Text = formattedRate;
 
                 IIOHelper fileIOHelper = new DatabaseIOHelper();
                 //FileIOHelper fileIOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
-                fileIOHelper.AddMortgages(formattedOutput);
+                fileIOHelper.AddMortgages(formattedOutput, formattedPrinciple, formattedYears, formattedRate);
             }
         }
+
     }
 }

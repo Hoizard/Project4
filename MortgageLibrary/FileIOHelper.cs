@@ -15,7 +15,7 @@ namespace Project3
             pathandfile = pathAndFile;
         }
 
-        public void AddMortgages(string formattedTempString)
+        public void AddMortgages(string formattedTempString, string formattedPrinciple, string formattedYears, string formattedRate)
         {
 
             try

@@ -13,13 +13,17 @@ namespace MortgageLibrary
     {
         const string conString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Mortgages;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             
-        public void AddMortgages(string formattedTempString)
+        public void AddMortgages(string formattedTempString, string formattedPrinciple, string formattedYears, string formattedRate)
         {
-            string insertCommand = "insert into Mortgages values (@formattedString)";
+            string insertCommand = "insert into Mortgages (Principle, InterestRate, DurationYears, MonthlyPayment) values  (@principleAmount, @rateValue, @otherYears, @resultPayment)";
+            //string insertCommand = "insert into Mortgages (Principle, InterestRate, DurationYears, MonthlyPayment) values ('" + PrincipleAmount.Text + "', '" + DropDownList1.SelectedItem.Text + "', '" + OtherYears.Text + "', '" + ResultPayment.Text + "',) (@formattedString)";
             using (SqlConnection sqlConnection = new SqlConnection(conString))
             {
                 SqlCommand sqlCommand = new SqlCommand(insertCommand, sqlConnection);
-                sqlCommand.Parameters.Add("@formattedString", SqlDbType.NVarChar).Value = formattedTempString;
+                sqlCommand.Parameters.Add("@principleAmount", SqlDbType.NVarChar).Value = formattedPrinciple;
+                sqlCommand.Parameters.Add("@rateValue", SqlDbType.NVarChar).Value = formattedRate;
+                sqlCommand.Parameters.Add("@otherYears", SqlDbType.NVarChar).Value = formattedYears;
+                sqlCommand.Parameters.Add("@resultPayment", SqlDbType.NVarChar).Value = formattedTempString;
 
                 sqlConnection.Open();
 
@@ -29,8 +33,8 @@ namespace MortgageLibrary
 
                 sqlConnection.Close();
             }
-            
-            
+
+
         }
 
         public void ClearAllMortgages()
@@ -43,7 +47,7 @@ namespace MortgageLibrary
                 SqlCommand sqlCommand = new SqlCommand(deleteCommand, sqlConnection);
                 sqlConnection.Open();
 
-                //int result = sqlCommand.ExecuteNonQuery();
+                int result = sqlCommand.ExecuteNonQuery();
 
                 sqlConnection.Close();
             }
@@ -66,7 +70,7 @@ namespace MortgageLibrary
                 {
                     while(sqlDataReader.Read())
                     {
-                        list.Add((string)sqlDataReader["Principle"]);
+                        list.Add((string)sqlDataReader["Principle, InterestRate, DurationYears, MonthlyPayment"]);
                     }
                     
                 }
