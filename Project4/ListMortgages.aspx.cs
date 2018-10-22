@@ -1,4 +1,5 @@
-﻿using Project3;
+﻿using MortgageLibrary;
+using Project3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace Project4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            IIOHelper iOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
+            //IIOHelper iOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
+            IIOHelper iOHelper = new DatabaseIOHelper();
             var list = iOHelper.ListAllMortgages();
 
             if (list.Count == 0)

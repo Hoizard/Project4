@@ -1,4 +1,5 @@
-﻿using Project3;
+﻿using MortgageLibrary;
+using Project3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace Project4
 
         protected void ClearButton_Click(object sender, EventArgs e)
         {
-            IIOHelper iOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
+            //IIOHelper iOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
+            IIOHelper iOHelper = new DatabaseIOHelper();
             iOHelper.ClearAllMortgages();
         }
     }

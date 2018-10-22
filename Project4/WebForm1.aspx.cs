@@ -1,4 +1,5 @@
-﻿using Project3;
+﻿using MortgageLibrary;
+using Project3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,8 +86,8 @@ namespace Project4
                 string formattedOutput = string.Format("The monthly payment is {0:C}", monthly);
                 ResultPayment.Text = formattedOutput;
 
-                //IIOHelper fileIOHelper = new DatabaseIOHelper();
-                FileIOHelper fileIOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
+                IIOHelper fileIOHelper = new DatabaseIOHelper();
+                //FileIOHelper fileIOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
                 fileIOHelper.AddMortgages(formattedOutput);
             }
         }
