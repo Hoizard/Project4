@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -49,7 +50,7 @@ namespace Project3
 
         }
 
-        public List<string> ListAllMortgages()
+        public DataTable ListAllMortgages()
         {
             List<string> allData = new List<string>();
             string fileLocation = pathandfile; //HttpContext.Current.Server.MapPath("~/app_data/log.txt");
@@ -61,7 +62,7 @@ namespace Project3
                 allData = new List<string>(allTempStringArray);
             }
 
-            return allData;
+            return new DataTable();
         }
     }
 }

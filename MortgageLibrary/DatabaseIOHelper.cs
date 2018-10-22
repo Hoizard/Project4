@@ -53,12 +53,14 @@ namespace MortgageLibrary
             }
         }
 
-        public List<string> ListAllMortgages()
+        public DataTable ListAllMortgages()
         {
             List<string> list = new List<string>();
 
             string conString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Mortgages;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             string selectCommand = "select * from mortgages";
+            DataTable dt;
+            dt = new DataTable();
 
             using (SqlConnection sqlConnection = new SqlConnection(conString))
             {
@@ -68,15 +70,21 @@ namespace MortgageLibrary
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
                 if (sqlDataReader.HasRows)
                 {
-                    while(sqlDataReader.Read())
-                    {
-                        list.Add((string)sqlDataReader["Principle, InterestRate, DurationYears, MonthlyPayment"]);
-                    }
+                    dt.Load(sqlDataReader);
+                    //while(sqlDataReader.Read())
+                    //{
+                    //    dt.Load(sqlDataReader);
+                    //    // Principle ,InterestRate, DurationYears, MonthlyPayment
+                    //    //list.Add((string)sqlDataReader["Principle"]);
+                    //    //list.Add((string)sqlDataReader["DurationYears"]);
+                    //    //list.Add((string)sqlDataReader["MonthlyPayment"];
+      
+                    //}
                     
                 }
                 sqlConnection.Close();
             }
-            return list;
+            return dt;
         }
     }
 }

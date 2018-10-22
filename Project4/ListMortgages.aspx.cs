@@ -15,14 +15,14 @@ namespace Project4
         {
             //IIOHelper iOHelper = new FileIOHelper(ServerPathHelper.GetPath("~/app_data/log.txt"));
             IIOHelper iOHelper = new DatabaseIOHelper();
-            var list = iOHelper.ListAllMortgages();
+            var dt = iOHelper.ListAllMortgages();
 
-            if (list.Count == 0)
-            {
-                list.Add("No Data stored!");
-            }
+            //if (list.Count == 0)
+            //{
+            //    list.Add("No Data stored!");
+            //}
 
-            GridView1.DataSource = list;
+            GridView1.DataSource = dt;
             GridView1.DataBind();
 
         }
